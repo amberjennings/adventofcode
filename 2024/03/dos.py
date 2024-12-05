@@ -9,11 +9,9 @@ def process(data):
     mul = True
     while index < len(data):
         if re.match(do_pattern, data[index:]):
-            print("found do")
             mul = True
             index += len(re.match(do_pattern, data[index:]).group(0))
         elif re.match(dont_pattern, data[index:]):
-            print("found don't")
             mul = False
             index += len(re.match(dont_pattern, data[index:]).group(0))
         else:
